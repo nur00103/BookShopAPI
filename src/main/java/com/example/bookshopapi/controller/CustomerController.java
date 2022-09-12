@@ -18,7 +18,6 @@ public class CustomerController {
     private final CustomerService customerService;
 
     @GetMapping()
-    //hansi usul?Crossorigin olan a ok
     public ResponseModel<List<CustomerResponse>> getAllCustomer(){
         return customerService.getAllCustomer();
     }
