@@ -1,8 +1,10 @@
 package com.example.bookshopapi.entity;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -29,5 +31,6 @@ public class Sales {
 
     private double amount;
 
+    @CreationTimestamp
     private Date salesDate;
 }

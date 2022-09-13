@@ -47,30 +47,30 @@ public class BookServiceImpl implements BookService {
         if (bookRequest==null){
             throw new MyException(ExceptionEnum.BAD_REQUEST);
         }
-        if (authorRepository.findByAuthor(bookRequest.getAuthorRequest().getAuthor())==null){
+        if (authorRepository.findByAuthor(bookRequest.getAuthor().getAuthor())==null){
             Author author1=new Author();
-            author1.setAuthor(bookRequest.getAuthorRequest().getAuthor());
+            author1.setAuthor(bookRequest.getAuthor().getAuthor());
             author=authorRepository.save(author1);
         }else {
-            author=authorRepository.findByAuthor(bookRequest.getAuthorRequest().getAuthor());
-        }if (typeRepository.findByTypeName(bookRequest.getTypeRequest().getType())==null){
+            author=authorRepository.findByAuthor(bookRequest.getAuthor().getAuthor());
+        }if (typeRepository.findByTypeName(bookRequest.getType().getType())==null){
             Type type1=new Type();
-            type1.setTypeName(bookRequest.getTypeRequest().getType());
+            type1.setTypeName(bookRequest.getType().getType());
             type=typeRepository.save(type1);
         }else {
-            type=typeRepository.findByTypeName(bookRequest.getTypeRequest().getType());
-        }if (languageRepository.findByLanguage(bookRequest.getLanguageRequest().getLanguage())==null){
+            type=typeRepository.findByTypeName(bookRequest.getType().getType());
+        }if (languageRepository.findByLanguage(bookRequest.getLanguage().getLanguage())==null){
             Language language1=new Language();
-            language1.setLanguage(bookRequest.getLanguageRequest().getLanguage());
+            language1.setLanguage(bookRequest.getLanguage().getLanguage());
             language=languageRepository.save(language1);
         }else {
-            language=languageRepository.findByLanguage(bookRequest.getLanguageRequest().getLanguage());
-        }if (pubHouseRepository.findByHouseName(bookRequest.getPublishingHouseRequest().getPubHouse())==null){
+            language=languageRepository.findByLanguage(bookRequest.getLanguage().getLanguage());
+        }if (pubHouseRepository.findByHouseName(bookRequest.getPubHouse().getPubHouse())==null){
             PublishingHouse publishingHouse1=new PublishingHouse();
-            publishingHouse1.setHouseName(bookRequest.getPublishingHouseRequest().getPubHouse());
+            publishingHouse1.setHouseName(bookRequest.getPubHouse().getPubHouse());
             publishingHouse=pubHouseRepository.save(publishingHouse1);
         }else {
-            publishingHouse=pubHouseRepository.findByHouseName(bookRequest.getPublishingHouseRequest().getPubHouse());
+            publishingHouse=pubHouseRepository.findByHouseName(bookRequest.getPubHouse().getPubHouse());
         }
         Book book=new Book();
         book.setName(bookRequest.getName());
@@ -105,30 +105,30 @@ public class BookServiceImpl implements BookService {
         if (bookRequest==null){
             throw new MyException(ExceptionEnum.BAD_REQUEST);
         }
-        if (authorRepository.findByAuthor(bookRequest.getAuthorRequest().getAuthor())==null){
+        if (authorRepository.findByAuthor(bookRequest.getAuthor().getAuthor())==null){
             Author author1=new Author();
-            author1.setAuthor(bookRequest.getAuthorRequest().getAuthor());
+            author1.setAuthor(bookRequest.getAuthor().getAuthor());
             author=authorRepository.save(author1);
         }else {
-            author=authorRepository.findByAuthor(bookRequest.getAuthorRequest().getAuthor());
-        }if (typeRepository.findByTypeName(bookRequest.getTypeRequest().getType())==null){
+            author=authorRepository.findByAuthor(bookRequest.getAuthor().getAuthor());
+        }if (typeRepository.findByTypeName(bookRequest.getType().getType())==null){
             Type type1=new Type();
-            type1.setTypeName(bookRequest.getTypeRequest().getType());
+            type1.setTypeName(bookRequest.getType().getType());
             type=typeRepository.save(type1);
         }else {
-            type=typeRepository.findByTypeName(bookRequest.getTypeRequest().getType());
-        }if (languageRepository.findByLanguage(bookRequest.getLanguageRequest().getLanguage())==null){
+            type=typeRepository.findByTypeName(bookRequest.getType().getType());
+        }if (languageRepository.findByLanguage(bookRequest.getLanguage().getLanguage())==null){
             Language language1=new Language();
-            language1.setLanguage(bookRequest.getLanguageRequest().getLanguage());
+            language1.setLanguage(bookRequest.getLanguage().getLanguage());
             language=languageRepository.save(language1);
         }else {
-            language=languageRepository.findByLanguage(bookRequest.getLanguageRequest().getLanguage());
-        }if (pubHouseRepository.findByHouseName(bookRequest.getPublishingHouseRequest().getPubHouse())==null){
+            language=languageRepository.findByLanguage(bookRequest.getLanguage().getLanguage());
+        }if (pubHouseRepository.findByHouseName(bookRequest.getPubHouse().getPubHouse())==null){
             PublishingHouse publishingHouse1=new PublishingHouse();
-            publishingHouse1.setHouseName(bookRequest.getPublishingHouseRequest().getPubHouse());
+            publishingHouse1.setHouseName(bookRequest.getPubHouse().getPubHouse());
             publishingHouse=pubHouseRepository.save(publishingHouse1);
         }else {
-            publishingHouse=pubHouseRepository.findByHouseName(bookRequest.getPublishingHouseRequest().getPubHouse());
+            publishingHouse=pubHouseRepository.findByHouseName(bookRequest.getPubHouse().getPubHouse());
         }
         Book book=bookRepository.findById(bookId).get();
         book.setId(bookId);

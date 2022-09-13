@@ -32,7 +32,7 @@ public class ExceptionController {
         bindingResult.getFieldErrors()
                 .stream()
                 .forEach(fieldError -> {
-                    error[0] += fieldError.getDefaultMessage() + " \n";
+                    error[0] = fieldError.getField()+" " + fieldError.getDefaultMessage() ;
                 });
         return ResponseModel.<CustomerResponse>builder().status(error[0])
                 .code(ExceptionEnum.BAD_REQUEST.getCode()).result(null).error(true).build();

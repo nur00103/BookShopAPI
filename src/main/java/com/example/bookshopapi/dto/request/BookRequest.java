@@ -22,13 +22,13 @@ public class BookRequest {
 
     private String name;
 
-    private AuthorRequest authorRequest;
+    private AuthorRequest author;
 
-    private TypeRequest typeRequest;
+    private TypeRequest type;
 
-    private LanguageRequest languageRequest;
+    private LanguageRequest language;
 
-    private PublishingHouseRequest publishingHouseRequest;
+    private PublishingHouseRequest pubHouse;
 
     private int page;
 
