@@ -15,5 +15,5 @@ public interface BookService {
 
     ResponseModel<BookResponse> getBookById(Long bookId);
 
-    void deleteBook(Long bookId);
+    ResponseModel<BookResponse> deleteBook(Long bookId);
 }

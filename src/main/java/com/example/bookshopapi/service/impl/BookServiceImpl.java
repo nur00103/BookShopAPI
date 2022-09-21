@@ -161,11 +161,14 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public void deleteBook(Long bookId) {
+    public ResponseModel<BookResponse> deleteBook(Long bookId) {
         if (!bookRepository.findById(bookId).isPresent()){
             throw new MyException(ExceptionEnum.BOOK_NOT_FOUND);
         }
         bookRepository.deleteById(bookId);
+        return ResponseModel.<BookResponse>builder().result(null)
+                .status(ExceptionEnum.SUCCESS.getMessage()).code(ExceptionEnum.SUCCESS.getCode())
+                .error(false).build();
     }
 
     public BookResponse convertToRes(Book book){

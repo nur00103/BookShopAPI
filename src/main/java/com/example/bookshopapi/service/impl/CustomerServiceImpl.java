@@ -75,12 +75,14 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public void deleteCustomer(Long customerId) {
+    public ResponseModel<CustomerResponse> deleteCustomer(Long customerId) {
         if (!customerRepository.findById(customerId).isPresent()){
             throw new MyException(ExceptionEnum.USER_NOT_FOUND);
         }else {
             customerRepository.deleteById(customerId);
         }
+        return ResponseModel.<CustomerResponse>builder().result(null).error(false)
+                .status(ExceptionEnum.SUCCESS.getMessage()).code(ExceptionEnum.SUCCESS.getCode()).build();
     }
 
     public CustomerResponse convertToResponse(Customer customer){
